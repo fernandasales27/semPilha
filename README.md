@@ -9,7 +9,9 @@ Augusto Sampaio
 
 *Equipe:*
 Maria Fernanda de Lima Oliveira Sales| mflos@cin.ufpe.br
+
 Jóison Oliveira Pereira | jop@cin.ufpe.br
+
 Ricardo Pereira Lins | rpl3@cin.ufpe.br
 
 *Contextualização*
