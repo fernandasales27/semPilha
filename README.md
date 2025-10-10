@@ -1,7 +1,7 @@
 *Projeto PLP*
 
 
-## SemPilha
+## CemPilha
 
 ### Disciplina
 
@@ -13,8 +13,10 @@ Augusto Sampaio
 
 ### Equipe
 
-*Maria Fernanda de Lima Oliveira Sales| mflos@cin.ufpe.br
-*Jóison Oliveira Pereira | jop@cin.ufpe.br
+Maria Fernanda de Lima Oliveira Sales| mflos@cin.ufpe.br
+
+Jóison Oliveira Pereira | jop@cin.ufpe.br
+
 *Ricardo Pereira Lins | rpl3@cin.ufpe.br
 
 ### Contextualização
@@ -40,6 +42,51 @@ Funções possam receber uma pilha como argumento, manipular seus elementos e re
 
 
 ## BNF
+
+Programa ::= Expressao
+
+Expressao ::= Valor 
+            | ExpUnaria 
+            | ExpBinaria 
+            | ExpDeclaracao 
+            | Id 
+            | Aplicacao 
+            | IfThenElse
+            | OperacaoPilha
+
+Valor ::= ValorConcreto
+ValorConcreto ::= ValorInteiro | ValorBooleano | ValorString
+
+ExpUnaria ::= "-" Expressao 
+            | "not" Expressao 
+            | "length" Expressao
+
+ExpBinaria ::= Expressao "+" Expressao 
+             | Expressao "-" Expressao 
+             | Expressao "and" Expressao 
+             | Expressao "or" Expressao 
+             | Expressao "==" Expressao 
+             | Expressao "++" Expressao
+
+ExpDeclaracao ::= "let" DeclaracaoFuncional "in" Expressao
+DeclaracaoFuncional ::= DecVariavel | DecFuncao | DecComposta
+DecVariavel ::= "var" Id "=" Expressao
+DecFuncao ::= "fun" ListaParametro "=" Expressao
+DecComposta ::= DeclaracaoFuncional "," DeclaracaoFuncional
+
+ListaParametro ::= Parametro | Parametro ListaParametro
+Parametro ::= ParametroObrigatorio
+
+Aplicacao ::= Id"(" ListExp ")"
+ListExp ::= Expressao | Expressao, ListExp
+
+IfThenElse ::= "if" Expressao "then" Expressao "else" Expressao
+
+OperacaoPilha ::= "push" "(" Expressao "," Expressao ")"
+                 | "pop" "(" Expressao ")"
+                 | "top" "(" Expressao ")"
+                 | "emptyStack"
+
 
 
 ## Slides da apresentação
